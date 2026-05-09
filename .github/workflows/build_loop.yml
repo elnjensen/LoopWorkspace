@@ -188,6 +188,10 @@ jobs:
       - name: Customize Loop
         run: |
 
+          # Point to the SHA for my Live Activity fixes:
+          git update-index --cacheinfo 160000 aeab225e018fe413f25606ded3ff3258223a1e3e "Loop"
+          git submodule update
+          
           # LoopWorkspace patches
           # -applies any patches located in the LoopWorkspace/patches/ directory
           if $(ls ./patches/* &> /dev/null); then
