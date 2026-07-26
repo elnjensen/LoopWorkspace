@@ -140,6 +140,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C14437C42529F1D984A40744"
+               BuildableName = "GarminDataFieldServiceKitPlugin.loopplugin"
+               BlueprintName = "GarminDataFieldServiceKitPlugin"
+               ReferencedContainer = "container:GarminDataFieldService/GarminDataFieldService.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "3E767D422D67B790004B1971"
                BuildableName = "MedtrumKitPlugin.loopplugin"
                BlueprintName = "MedtrumKitPlugin"

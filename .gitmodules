@@ -61,3 +61,6 @@
 [submodule "EversenseKit"]
 	path = EversenseKit
 	url = https://github.com/bastiaanv/EversenseKit
+[submodule "GarminDataFieldService"]
+	path = GarminDataFieldService
+	url = https://github.com/elnjensen/GarminDataFieldService.git
