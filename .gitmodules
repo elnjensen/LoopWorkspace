@@ -64,3 +64,7 @@
 [submodule "GarminDataFieldService"]
 	path = GarminDataFieldService
 	url = https://github.com/elnjensen/GarminDataFieldService.git
+[submodule "TandemKit"]
+	path = TandemKit
+	url = https://github.com/jwoglom/TandemKit
+	branch = dev
