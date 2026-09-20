@@ -1,4 +1,4 @@
-# Tandem testing branch
+# Tandem closed beta branch
 
 This branch is LoopKit/LoopWorkspace `dev` plus one commit that adds
 [TandemKit](https://github.com/jwoglom/TandemKit) (branch `main`) as a pump
@@ -17,25 +17,27 @@ your fork also has to be able to read TandemKit, not just your own repos.
 
 ## Getting the branch into your fork
 
-Both routes end with a `feat/tandem-closed-beta` branch on your fork. Pick whichever you prefer.
+Both routes end with a `feat/tandem-closed-beta` branch on your fork. Pick
+whichever you prefer.
 
 ### In the browser
 
-1. On your LoopWorkspace fork, create a branch named `feat/tandem-closed-beta`. GitHub always
-   branches from an existing branch, so start it from your `dev`.
+1. On your LoopWorkspace fork, create a branch named
+   `feat/tandem-closed-beta`. GitHub always branches from an existing branch,
+   so start it from your `dev`.
 2. Open this link, replacing `YOUR-USERNAME` (and the repo name, if your fork
    isn't called `LoopWorkspace`):
 
    ```
-   https://github.com/YOUR-USERNAME/LoopWorkspace/compare/feat/tandem-closed-beta...elnjensen:LoopWorkspace:feat/tandem-closed-beta?expand=1
+   https://github.com/YOUR-USERNAME/LoopWorkspace/compare/feat/tandem-closed-beta...LoopKit:LoopWorkspace:feat/tandem-closed-beta?expand=1
    ```
 
-   That opens a pull request **into your own fork's `feat/tandem-closed-beta` branch** — not
-   into LoopKit.
+   That opens a pull request **into your own fork's branch** — not into
+   LoopKit/LoopWorkspace itself.
 3. Create the pull request, then merge it.
 
-If the pull request shows conflicts, your `feat/tandem-closed-beta` branch started from
-something other than an up-to-date `dev`. The local route below avoids that.
+If the pull request shows conflicts, your branch started from something other
+than an up-to-date `dev`. The local route below avoids that.
 
 ### Locally
 
@@ -46,17 +48,18 @@ git clone --recurse-submodules https://github.com/YOUR-USERNAME/LoopWorkspace.gi
 cd LoopWorkspace
 ```
 
-Then copy this branch into your fork:
+Then copy this branch into your fork. Skip the first line if you already have
+an `upstream` remote pointing at LoopKit:
 
 ```bash
-git remote add elnjensen https://github.com/elnjensen/LoopWorkspace.git
-git fetch elnjensen feat/tandem-closed-beta
-git push origin elnjensen/feat/tandem-closed-beta:refs/heads/feat/tandem-closed-beta
+git remote add upstream https://github.com/LoopKit/LoopWorkspace.git
+git fetch upstream feat/tandem-closed-beta
+git push origin upstream/feat/tandem-closed-beta:refs/heads/feat/tandem-closed-beta
 ```
 
-Your fork now has a `feat/tandem-closed-beta` branch identical to this one, with no merge
-commit. This only works if you don't already have a `feat/tandem-closed-beta` branch carrying
-commits of your own.
+Your fork now has a `feat/tandem-closed-beta` branch identical to this one,
+with no merge commit. This only works if you don't already have a branch by
+that name carrying commits of your own.
 
 To build it on your Mac:
 
