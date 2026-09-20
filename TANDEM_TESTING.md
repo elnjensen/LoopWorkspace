@@ -17,24 +17,24 @@ your fork also has to be able to read TandemKit, not just your own repos.
 
 ## Getting the branch into your fork
 
-Both routes end with a `tandem` branch on your fork. Pick whichever you prefer.
+Both routes end with a `feat/tandem-closed-beta` branch on your fork. Pick whichever you prefer.
 
 ### In the browser
 
-1. On your LoopWorkspace fork, create a branch named `tandem`. GitHub always
+1. On your LoopWorkspace fork, create a branch named `feat/tandem-closed-beta`. GitHub always
    branches from an existing branch, so start it from your `dev`.
 2. Open this link, replacing `YOUR-USERNAME` (and the repo name, if your fork
    isn't called `LoopWorkspace`):
 
    ```
-   https://github.com/YOUR-USERNAME/LoopWorkspace/compare/tandem...elnjensen:LoopWorkspace:tandem?expand=1
+   https://github.com/YOUR-USERNAME/LoopWorkspace/compare/feat/tandem-closed-beta...elnjensen:LoopWorkspace:feat/tandem-closed-beta?expand=1
    ```
 
-   That opens a pull request **into your own fork's `tandem` branch** — not
+   That opens a pull request **into your own fork's `feat/tandem-closed-beta` branch** — not
    into LoopKit.
 3. Create the pull request, then merge it.
 
-If the pull request shows conflicts, your `tandem` branch started from
+If the pull request shows conflicts, your `feat/tandem-closed-beta` branch started from
 something other than an up-to-date `dev`. The local route below avoids that.
 
 ### Locally
@@ -50,18 +50,18 @@ Then copy this branch into your fork:
 
 ```bash
 git remote add elnjensen https://github.com/elnjensen/LoopWorkspace.git
-git fetch elnjensen tandem
-git push origin elnjensen/tandem:refs/heads/tandem
+git fetch elnjensen feat/tandem-closed-beta
+git push origin elnjensen/feat/tandem-closed-beta:refs/heads/feat/tandem-closed-beta
 ```
 
-Your fork now has a `tandem` branch identical to this one, with no merge
-commit. This only works if you don't already have a `tandem` branch carrying
+Your fork now has a `feat/tandem-closed-beta` branch identical to this one, with no merge
+commit. This only works if you don't already have a `feat/tandem-closed-beta` branch carrying
 commits of your own.
 
 To build it on your Mac:
 
 ```bash
-git checkout tandem
+git checkout feat/tandem-closed-beta
 git submodule update --init --recursive
 ```
 
