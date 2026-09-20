@@ -1,7 +1,7 @@
 # Tandem testing branch
 
 This branch is LoopKit/LoopWorkspace `dev` plus one commit that adds
-[TandemKit](https://github.com/jwoglom/TandemKit) (branch `dev`) as a pump
+[TandemKit](https://github.com/jwoglom/TandemKit) (branch `main`) as a pump
 manager. Nothing else is changed: Loop and every other submodule stay at the
 revisions `dev` pins. Built this way, Loop offers **Tandem Mobi** when you add
 a pump.
