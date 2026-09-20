@@ -2,22 +2,28 @@
 
 This branch is LoopKit/LoopWorkspace `dev` plus one commit that adds
 [TandemKit](https://github.com/jwoglom/TandemKit) (branch `main`) as a pump
-manager. Nothing else is changed: Loop and every other submodule stay at the
-revisions `dev` pins. Built this way, Loop offers **Tandem Mobi** when you add
-a pump.
+manager. This should be identical to the `dev` branch of Loop, but with the 
+option to add **Tandem Mobi** as a pump. TandemKit is a **private repository** 
+while we are in closed beta testing, so you will be unable to build unless
+you follow the directions below. 
 
 TandemKit is for EXPERIMENTAL USE ONLY.
 
 ## Before you start
 
-TandemKit is a **private repository**. Ask its maintainer (jwoglom) for access
-first — without it, the steps below fail when they reach the TandemKit
-submodule. If you plan to use the GitHub browser build, the `GH_PAT` secret in
-your fork also has to be able to read TandemKit, not just your own repos.
+This branch is for the use of those participating in a closed beta test of using the 
+Tandem Mobi with Loop. If you are not a member of the Closed Beta group, you cannot build this branch.
+
+In order to build using this branch, you must send your GitHub user name to Eric Jensen via Direct Message 
+on ZulipChat with your request to be included. This is only for expert testers who are experienced with Loop. 
+Please let Eric know how long you have used Loop, if you ever tested a new pump manager and if you both have 
+a Tandem Mobi and know how to use it. If you don't provide that information, you will receive a rejection. 
+If you are accepted to the closed beta group, you will get a reply to your DM with additional information.
+
 
 ## Getting the branch into your fork
 
-Both routes end with a `feat/tandem-closed-beta` branch on your fork. Pick
+Both of these routes end with a `feat/tandem-closed-beta` branch on your fork. Pick
 whichever you prefer.
 
 ### In the browser
