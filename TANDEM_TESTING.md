@@ -67,3 +67,20 @@ git submodule update --init --recursive
 
 Open `LoopWorkspace.xcworkspace`, select the **LoopWorkspace** scheme, and
 build as usual.
+
+### Signing
+
+If you put your Apple Developer Team ID two directory levels above the
+workspace folder, Xcode picks it up and signs automatically. Create
+`../../LoopConfigOverride.xcconfig` — so if the workspace is at
+`~/Developer/LoopWorkspace`, the file goes at `~/LoopConfigOverride.xcconfig` —
+containing:
+
+```
+LOOP_DEVELOPMENT_TEAM = ABCDE12345
+```
+
+The workspace's own `LoopConfigOverride.xcconfig` includes that path if it
+exists. Keeping it outside the repo means it survives fresh clones and branch
+switches, and can never be committed by accident. Editing the copy inside the
+workspace works too, but leaves a modified file in your clone.
