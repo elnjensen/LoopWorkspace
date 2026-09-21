@@ -26,7 +26,7 @@ If you are accepted to the closed beta group, you will get a reply to your DM wi
 Both of these routes end with a `feat/tandem-closed-beta` branch on your fork. Pick
 whichever you prefer, but see the comments about browser build.
 
-### In the browser
+### Building in the browser
 
 #### Important note: 
 There are limitations when you use Browser Build if one of the repositories needed is 
@@ -35,74 +35,38 @@ not in your organization if you use an organization. The cost per build is about
 more expensive - which means if you build frequently, you may exceed you free allowance. 
 GitHub emails you when you are close to your limit.
 
-If you use an organization, this means you must create a new fork of LoopWorkspace in your 
-personal GitHub account. Then you must add the 6 secrets to the LoopWorkspace fork.
+If you use an organization, this means you must create a new fork of LoopWorkspace in your personal GitHub account. Then you must add the 6 secrets to the LoopWorkspace fork.
 
-As long as your identifiers and app are already configured for Loop, you just need to add 
-the secrets to the new branch and run Build Loop.
+As long as your identifiers and app are already configured for Loop, you just need to add  the secrets to the new branch and run Build Loop.
 
-1. On your LoopWorkspace fork, create a branch named
-   `feat/tandem-closed-beta`. GitHub always branches from an existing branch,
-   so start it from your `dev`.
-2. Open this link, replacing `YOUR-USERNAME` (and the repo name, if your fork
-   isn't called `LoopWorkspace`):
+#### Creating and building the new branch
 
-   ```
-   https://github.com/YOUR-USERNAME/LoopWorkspace/compare/feat/tandem-closed-beta...LoopKit:LoopWorkspace:feat/tandem-closed-beta?expand=1
-   ```
+1. On your LoopWorkspace fork, follow the Loopdocs instructions under "[Check Current Branch](https://loopkit.github.io/loopdocs/browser/build-dev-browser/#check-current-branch)" to navigate to the branches page and click the "New branch" button. 
+2. Then, follow the screenshots just below that in the docs to create a new branch named
+   `feat/tandem-closed-beta`based on the LoopKit branch of the same name.
+3. Finally, follow the Loopdocs "[Build Branch](https://loopkit.github.io/loopdocs/browser/build-dev-browser/#build-branch)" instructions to select and build your new branch. 
 
-   That opens a pull request **into your own fork's branch** — not into
-   LoopKit/LoopWorkspace itself.
-3. Create the pull request, then merge it.
 
-If the pull request shows conflicts, your branch may have started from something other
-than an up-to-date `dev`. The local route below avoids that.
+### Building locally using Xcode
 
-### Locally using Xcode
+Follow the overall guidance in the Loopdocs "[Build Other Branches](https://loopkit.github.io/loopdocs/build/build-dev-mac/#build-other-branches)" section to use the build select script to download, customize (if desired), and build the `feat/tandem-closed-beta` branch.
 
-If you don't have a clone yet:
+First, copy and run this command in Terminal: 
 
 ```bash
-git clone --recurse-submodules https://github.com/YOUR-USERNAME/LoopWorkspace.git
-cd LoopWorkspace
+/bin/bash -c "$(curl -fsSL \
+  https://raw.githubusercontent.com/loopandlearn/lnl-scripts/main/BuildLoop.sh)" \
+   - feat/tandem-closed-beta
 ```
 
-Then copy this branch into your fork. Skip the first line if you already have
-an `upstream` remote pointing at LoopKit:
+Optionally, run the customization-select script as outlined in the docs.  Since this branch only adds a new pump manager module and doesn't otherwise change Loop, customizations that work for `dev` should apply cleanly here as well. 
 
-```bash
-git remote add upstream https://github.com/LoopKit/LoopWorkspace.git
-git fetch upstream feat/tandem-closed-beta
-git push origin upstream/feat/tandem-closed-beta:refs/heads/feat/tandem-closed-beta
-```
+Finally, open `LoopWorkspace.xcworkspace`, select the **LoopWorkspace** scheme, and build as usual.
 
-Your fork now has a `feat/tandem-closed-beta` branch identical to this one,
-with no merge commit. This only works if you don't already have a branch by
-that name carrying commits of your own.
+#### Signing
 
-To build it on your Mac:
-
-```bash
-git checkout feat/tandem-closed-beta
-git submodule update --init --recursive
-```
-
-Open `LoopWorkspace.xcworkspace`, select the **LoopWorkspace** scheme, and
-build as usual.
-
-### Signing
-
-If you put your Apple Developer Team ID two directory levels above the
-workspace folder, Xcode picks it up and signs automatically. Create
-`../../LoopConfigOverride.xcconfig` — so if the workspace is at
-`~/Developer/LoopWorkspace`, the file goes at `~/LoopConfigOverride.xcconfig` —
-containing:
-
+If you put your Apple Developer Team ID two directory levels above the workspace folder, Xcode picks it up and signs automatically. If you use the build select script as above, copy the `LoopConfigOverride.xcconfig` file from the LoopWorkspace folder and make a copy in two levels up in `~/Downloads/BuildLoop/`, editing it to add your Team ID on the line that looks like this: 
 ```
 LOOP_DEVELOPMENT_TEAM = ABCDE12345
 ```
-
-The workspace's own `LoopConfigOverride.xcconfig` includes that path if it
-exists. Keeping it outside the repo means it survives fresh clones and branch
-switches, and can never be committed by accident. Editing the copy inside the
-workspace works too, but leaves a modified file in your clone.
+Be sure to remove the `#` comment symbol from the beginning of the line. 
