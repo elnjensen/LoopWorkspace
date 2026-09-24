@@ -28,17 +28,6 @@ whichever you prefer, but see the comments about browser build.
 
 ### Building in the browser
 
-#### Important note: 
-There are limitations when you use Browser Build if one of the repositories needed is 
-private, as in this case. You must configure this branch in your personal GitHub username, 
-not in your organization if you use an organization. The cost per build is about 20 times 
-more expensive - which means if you build frequently, you may exceed you free allowance. 
-GitHub emails you when you are close to your limit.
-
-If you use an organization, this means you must create a new fork of LoopWorkspace in your personal GitHub account. Then you must add the 6 secrets to the LoopWorkspace fork.
-
-As long as your identifiers and app are already configured for Loop, you just need to add  the secrets to the new branch and run Build Loop.
-
 #### Creating and building the new branch
 
 1. On your LoopWorkspace fork, follow the Loopdocs instructions under "[Check Current Branch](https://loopkit.github.io/loopdocs/browser/build-dev-browser/#check-current-branch)" to navigate to the branches page and click the "New branch" button. 
