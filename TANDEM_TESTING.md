@@ -24,7 +24,7 @@ If you are accepted to the closed beta group, you will get a reply to your DM wi
 ## Getting the branch into your fork
 
 Both of these routes end with a `feat/tandem-closed-beta` branch on your fork. Pick
-whichever you prefer, but see the comments about browser build.
+whichever you prefer.
 
 ### Building in the browser
 
