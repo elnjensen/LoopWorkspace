@@ -28,7 +28,7 @@ Follow "Before you start" in `TandemKit/docs/hardware-test-plan.md`:
 You need access to `jwoglom/TandemKit`, which is private. Then:
 
 ```bash
-git clone --branch next-dev-tandem --recurse-submodules https://github.com/elnjensen/LoopWorkspace.git
+git clone --branch tandem-next-dev-do-not-use --recurse-submodules https://github.com/elnjensen/LoopWorkspace.git
 ```
 
 Open `LoopWorkspace.xcworkspace`, select the **LoopWorkspace** scheme, and build. Do a clean build if you've built
